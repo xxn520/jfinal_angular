@@ -2,13 +2,13 @@ var myApp= angular.module('myApp', ['BlogCtrl','BlogService','BlogFilter','BlogD
 
 myApp.config(function($routeProvider){
     $routeProvider.when('/',{
-        templateUrl : 'templates/list.html',
+        templateUrl : 'template/list.html',
         controller : 'ListCtrl'
     }).when('/add',{
-        templateUrl : 'templates/add.html',
+        templateUrl : 'template/add.html',
         controller : 'AddCtrl'
     }).when('/edit/:blogId',{
-        templateUrl : 'templates/edit.html',
+        templateUrl : 'template/edit.html',
         controller : 'EditCtrl'
     }).otherwise({
         redirectTo: '/'

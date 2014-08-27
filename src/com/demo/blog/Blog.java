@@ -2,6 +2,7 @@ package com.demo.blog;
 
 import java.util.List;
 import com.jfinal.plugin.activerecord.Model;
+import com.jfinal.plugin.activerecord.Page;
 
 /**
  * Blog model.
@@ -28,4 +29,7 @@ public class Blog extends Model<Blog> {
 	public List<Blog> findAll() {
 		return find("select * from blog order by id asc");
 	}
+    public Page<Blog> findByPagenum(int pagenum) {
+        return Blog.dao.paginate(pagenum,5,"select *","from blog order by id asc");
+    }
 }

@@ -11,11 +11,11 @@ import com.jfinal.core.Controller;
 public class BlogController extends Controller {
 	
 	public void index() {
-		render("Index.html");
+        render("Index.html");
 	}
 	
 	public void getlist(){
-		renderJson(Blog.dao.findAll());
+            renderJson(Blog.dao.findByPagenum(getParaToInt()));
 	}
 	
 	public void add() {
@@ -38,8 +38,9 @@ public class BlogController extends Controller {
 	}
 	
 	public void delete() {
-		Blog.dao.deleteById(getParaToInt());
-		renderJson(Blog.dao.findAll());
+        System.out.print(getParaToInt(0));
+		Blog.dao.deleteById(getParaToInt(0));
+        renderJson(Blog.dao.findByPagenum(getParaToInt(1)));
 	}
 }
 
