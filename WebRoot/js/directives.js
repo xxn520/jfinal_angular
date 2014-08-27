@@ -1,0 +1,1 @@
+var BlogDirective=angular.module('BlogDirective',[]);

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="framework/bootstrap-3.0.0/css/bootstrap.min.css">
+    <title>AngularJs+JFinal</title>
+    <script src="framework/angular-1.3.0.14/angular.js"></script>
+    <script src="framework/angular-1.3.0.14/angular-route.js"></script>
+    <script src="framework/angular-1.3.0.14/angular-animate.js"></script>
+    <script src="js/myApp.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/filters.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+</head>
+<style>
+    .panel-header h2{
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .panel-footer{
+        text-align: center;
+        font-size: 14px;
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+    }
+
+    a{
+        color: #000;
+    }
+
+    .im{
+        position: relative;
+        top: 70px;
+        left: 320px;
+    }
+</style>
+<body>
+    <div class="panel">
+        <div class="panel-header">
+            <a class="im" ng-href="#/"><img src="img/1.jpg"/></a>
+            <h2>这是用AngularJs改写的JFinal demo</h2>
+        </div>
+        <h2 style="padding-left: 20px">Blog管理&nbsp;&nbsp;
+            <a ng-href="#/add">创建Blog</a>
+        </h2>
+        <div ng-view>
+        </div>
+        <div class="panel-footer">
+            <span>&copy;Copyright 2014,BY M2</span>
+        </div>
+    </div>
+</body>
+</html>
