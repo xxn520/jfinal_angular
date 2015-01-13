@@ -24,7 +24,10 @@ public class BlogController extends Controller {
 	@Before(BlogValidator.class)
 	public void save() {
 		getModel(Blog.class).save();
-		redirect("/");
+		if (getSessionAttr("user")==null)
+			redirect("/");
+		else
+			redirect("/user");
 	}
 	
 	public void edit() {
@@ -34,7 +37,10 @@ public class BlogController extends Controller {
 	@Before(BlogValidator.class)
 	public void update() {
 		getModel(Blog.class).update();
-		redirect("/");
+		if (getSessionAttr("user")==null)
+			redirect("/");
+		else
+			redirect("/user");
 	}
 	
 	public void delete() {
